@@ -113,3 +113,13 @@ local new_cmd = vim.api.nvim_create_user_command
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
+new_cmd("DiagnosticToggle", function()
+  local cfg = vim.diagnostic.config
+  local vt = cfg().virtual_text
+  cfg {
+    virtual_text = not vt,
+    underline = not vt,
+    signs = not vt,
+  }
+end, { desc = "Toggle Diagnostic" })
