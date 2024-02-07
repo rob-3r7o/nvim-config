@@ -19,6 +19,15 @@ M.dap = {
       "<cmd> DiagnosticToggle <CR>",
       "Toggle Diagnostic"
     },
+    ["<leader>tt"] = {
+      "<cmd> lua require('FTerm').toggle() <CR>",
+      "Floating Terminal"
+    },
+    ["<leader>gg"] = {
+      "<cmd> lua require('FTerm').run('lazygit') <CR>",
+      "Lazygit"
+    },
+
   }
 }
 

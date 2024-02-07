@@ -79,7 +79,21 @@ local plugins = {
     dependencies  = {
       "nvim-lua/plenary.nvim",
     },
-  }
+  },
+  {
+    "romgrk/barbar.nvim",
+    event = "VeryLazy",
+    config = function()
+      require('custom.configs.barbar-config').setup()
+    end,
+  },
+  {
+    "numToStr/FTerm.nvim",
+    event = "VeryLazy",
+    config = function()
+      require('custom.configs.fterm-config')
+    end,
+  },
 }
 
 return plugins
