@@ -79,28 +79,58 @@ M.tabufline = {
   plugin = true,
 
   n = {
-    -- cycle through buffers
+
     ["<tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflineNext()
-      end,
+      "<cmd> BufferNext <CR>",
       "Goto next buffer",
     },
 
     ["<S-tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflinePrev()
-      end,
+      "<cmd> BufferPrevious <CR>",
       "Goto prev buffer",
+    },
+
+    -- move buffers
+    ["<leader>>"] = {
+      "<cmd> BufferMoveNext <CR>",
+      "Move buffer to next position",
+    },
+
+    ["<leader><"] = {
+      "<cmd> BufferMovePrevious <CR>",
+      "Move buffer to prevoius position",
     },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
-      function()
-        require("nvchad.tabufline").close_buffer()
-      end,
+      "<cmd> BufferClose <CR>",
       "Close buffer",
     },
+
+
+    -- -- cycle through buffers
+    -- ["<tab>"] = {
+    --   function()
+    --     require("nvchad.tabufline").tabuflineNext()
+    --   end,
+    --   "Goto next buffer",
+    -- },
+    --
+    -- ["<S-tab>"] = {
+    --   function()
+    --     require("nvchad.tabufline").tabuflinePrev()
+    --   end,
+    --   "Goto prev buffer",
+    -- },
+    --
+    -- -- close buffer + hide terminal buffer
+    -- ["<leader>x"] = {
+    --   function()
+    --     require("nvchad.tabufline").close_buffer()
+    --   end,
+    --   "Close buffer",
+    -- },
+
   },
 }
 
